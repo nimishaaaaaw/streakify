@@ -9,27 +9,13 @@ connectDB();
 const app = express();
 
 /* ===============================
-   CORS CONFIG (Production Safe)
+   TEMP CORS (OPEN FOR DEPLOY)
 ================================ */
-
-const allowedOrigins = [
-  "http://localhost:5173", // local dev
-  "https://your-vercel-url.vercel.app" // replace after frontend deploy
-];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // allow requests with no origin (like mobile apps, Postman)
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true
+    origin: "*",
+    credentials: true,
   })
 );
 
