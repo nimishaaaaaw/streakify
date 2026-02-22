@@ -1,0 +1,10 @@
+{
+  "name": "streakify",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Streakify MERN habit tracker",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server"
+  }
+}
