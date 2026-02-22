@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/dashboard.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://streakify-nuij.onrender.com";
 
 function CreateHabit() {
   const [name, setName] = useState("");

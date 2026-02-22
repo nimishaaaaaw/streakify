@@ -4,7 +4,7 @@ import "../styles/auth.css";
 import AuthLayout from "../components/AuthLayout";
 import "../styles/auth.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://streakify-nuij.onrender.com/api/auth/login";
 
 function Login() {
   const [email, setEmail] = useState("");

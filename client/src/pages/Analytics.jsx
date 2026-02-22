@@ -13,7 +13,7 @@ import {
 } from "recharts";
 import "../styles/analytics.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://streakify-nuij.onrender.com";
 
 function Analytics() {
   const [data, setData] = useState(null);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://streakify-nuij.onrender.com";
 
 function Heatmap({ habitId, token, refreshKey }) {
   const [logs, setLogs] = useState([]);

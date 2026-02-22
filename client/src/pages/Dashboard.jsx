@@ -4,7 +4,7 @@ import Modal from "../components/Modal";
 import Heatmap from "../components/Heatmap";
 import "../styles/dashboard.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://streakify-nuij.onrender.com";
 
 function Dashboard() {
   const [habits, setHabits] = useState([]);
