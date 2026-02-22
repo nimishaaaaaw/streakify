@@ -26,7 +26,7 @@ function Analytics() {
       return;
     }
 
-    fetch(`${API_URL}/habits/analytics/overview`, {
+    fetch(`${API_URL}/api/habits/analytics/overview`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())

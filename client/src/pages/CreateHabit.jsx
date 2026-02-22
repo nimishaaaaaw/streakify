@@ -22,7 +22,7 @@ function CreateHabit() {
     }
 
     try {
-      const response = await fetch(`${API_URL}/habits`, {
+      const response = await fetch(`${API_URL}/api/habits`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -32,7 +32,7 @@ function Dashboard() {
 
   const fetchHabits = async () => {
     try {
-      const response = await fetch(`${API_URL}/habits`, {
+      const response = await fetch(`${API_URL}/api/habits`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -62,36 +62,33 @@ function Dashboard() {
     }
   };
 
-  const completeHabit = async (habitId) => {
-    try {
-      const response = await fetch(
-        `${API_URL}/habits/${habitId}/complete`,
-        {
-          method: "POST",
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+const completeHabit = async (habitId) => {
+  try {
+    const response = await fetch(`${API_URL}/api/habits/${habitId}/complete`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.message);
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message);
 
+    setCompletedToday((prev) => ({
+      ...prev,
+      [habitId]: true,
+    }));
+
+    fetchHabits();
+    setRefreshKey((prev) => prev + 1);
+  } catch (err) {
+    if (err.message === "Habit already completed this period") {
       setCompletedToday((prev) => ({
         ...prev,
         [habitId]: true,
       }));
-
-      fetchHabits();
       setRefreshKey((prev) => prev + 1);
-    } catch (err) {
-      if (err.message === "Habit already completed this period") {
-        setCompletedToday((prev) => ({
-          ...prev,
-          [habitId]: true,
-        }));
-        setRefreshKey((prev) => prev + 1);
-      }
     }
-  };
+  }
+};
 
   /* ===============================
      MODAL FUNCTIONS (RESTORED)
@@ -116,14 +113,14 @@ function Dashboard() {
   const confirmAction = async () => {
     try {
       if (modalType === "delete") {
-        await fetch(`${API_URL}/habits/${selectedHabitId}`, {
+        await fetch(`${API_URL}/api/habits/${selectedHabitId}`, {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
         });
       }
 
       if (modalType === "edit") {
-        await fetch(`${API_URL}/habits/${selectedHabitId}`, {
+        await fetch(`${API_URL}/api/habits/${selectedHabitId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
