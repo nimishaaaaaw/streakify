@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AuthLayout from "../components/AuthLayout";
 import "../styles/auth.css";
 
-const API_URL = "https://streakify-nuij.onrender.com/api/auth/register";
+const API_URL = "https://streakify-nuij.onrender.com/api/auth";
 
 function Register() {
   const [name, setName] = useState("");
@@ -19,7 +19,7 @@ function Register() {
     setSuccess("");
 
     try {
-      const response = await fetch(`${API_URL}/auth/register`, {
+      const response = await fetch(`${API_URL}/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

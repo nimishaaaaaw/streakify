@@ -4,7 +4,7 @@ import "../styles/auth.css";
 import AuthLayout from "../components/AuthLayout";
 import "../styles/auth.css";
 
-const API_URL = "https://streakify-nuij.onrender.com/api/auth/login";
+const API_URL = "https://streakify-nuij.onrender.com/api/auth";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -17,7 +17,7 @@ function Login() {
     setError("");
 
     try {
-      const response = await fetch(`${API_URL}/auth/login`, {
+      const response = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
