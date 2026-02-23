@@ -6,7 +6,7 @@ function Heatmap({ habitId, token, refreshKey }) {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/habits/${habitId}/logs`, {
+    fetch(`${API_URL}/api/habits/${habitId}/logs`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
