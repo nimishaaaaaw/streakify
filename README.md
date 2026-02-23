@@ -2,7 +2,7 @@
 
 A modern full-stack habit tracking application with analytics, heatmaps, and secure authentication.
 
-Live Demo: https://your-vercel-link.vercel.app  
+Live Demo: https://streakify-kappa.vercel.app
 Backend API: https://streakify-nuij.onrender.com  
 
 ---
@@ -49,19 +49,26 @@ Backend API: https://streakify-nuij.onrender.com
 ---
 
 ## 📸 Screenshots
+## 💻 Landing page
+
+![Heatmap](client/public/screenshots/splash.png)
 
 ### 🔑 Authentication
 
 ![Register](client/public/screenshots/register.png)
 ![Login](client/public/screenshots/login.png)
 
-### 📊 Dashboard
+## 📋 Dashboard
 
 ![Dashboard](client/public/screenshots/dashboard.png)
 
-### 🔥 Heatmap
+## 📝 Create Habit
 
-![Heatmap](client/public/screenshots/heatmap.png)
+![Heatmap](client/public/screenshots/createhabit.png)
+
+## 📊 Analytics
+![Heatmap](client/public/screenshots/analytics1.png)
+![Heatmap](client/public/screenshots/analytics2.png)
 
 ---
 
@@ -124,3 +131,4 @@ npm run dev
 
 Nimisha Majgawali  
 Full Stack Developer  
+
